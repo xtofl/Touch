@@ -34,32 +34,22 @@ function randomLetter( )
 $.fn.underlineLetter = function( n )
 {
 	$( this ).html( 
+		"<span>" +
 		$( this ).text( ).slice( 0, n ) +
-		"<span class=\"underline\">" +
+		"</span><span class=\"underline\">" +
 		$( this ).text( )[ n ] + 
-		"</span>" +
-		$( this ).text( ).slice( n + 1 )
+		"</span><span>" +
+		$( this ).text( ).slice( n + 1 ) +
+		"</span>"
 	);
-
-	$( 'span.underline' ).css( 'text-decoration', 'underline' );
 };
 
 $.fn.underlineNext = function( )
 {
-	var i = $( this ).underlinedIndex( ) + 1;
-	$( this ).html( $( this ).text( ) );
-	$( this ).underlineLetter( i );
-};
 
-$.fn.underlinedIndex = function( )
-{
-	var output = $( this ).html( );
-	if( !output.search( 'span' ) )
-		return -1;
+	var spans = $( this ).children( 'span' );
 
-	for( var i = 0; i < output.length; i++ )
-	{
-		if( output[ i ] == '<' && output.substr( i, 5 ) == '<span' ) 
-			return i;
-	}	
+	spans.eq( 0 ).text( spans.eq( 0 ).text( ) + spans.eq( 1 ).text( ) );
+	spans.eq( 1 ).text( spans.eq( 2 ).text( )[ 0 ] );
+	spans.eq( 2 ).text( spans.eq( 2 ).text( ).slice( 1 ) );
 };
