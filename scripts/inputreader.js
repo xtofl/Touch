@@ -8,5 +8,5 @@ function keyReact( event )
 
 function enterReact( )
 {
-	$( '.output' ).text( '' );
+	$( '.output' ).text( generateOutput( 5, 5 ) );
 }

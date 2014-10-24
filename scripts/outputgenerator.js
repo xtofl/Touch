@@ -30,3 +30,16 @@ function randomLetter( )
 	var random = Math.floor( Math.random( ) * 26 + 97 );
 	return String.fromCharCode( random );
 }
+
+$.fn.underlineLetter = function( n )
+{
+	$( this ).html( 
+		$( this ).text( ).slice( 0, n ) +
+		"<span class=\"underline\">" +
+		$( this ).text( )[ n ] + 
+		"</span>" +
+		$( this ).text( ).slice( n + 1 )
+	);
+
+	$( 'span.underline' ).css( 'text-decoration', 'underline' );
+}
