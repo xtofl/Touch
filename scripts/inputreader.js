@@ -17,6 +17,6 @@ function compareInputAndOutput( inputLetter )
 	if( inputLetter ==  $( 'span.underline' ).text( ) )
 		$( '.output' ).underlineNext( );
 	else
-		$( 'span.underline' ).appendClass( 'red' );
+		$( 'span.underline' ).addClass( 'red' );
 
 }

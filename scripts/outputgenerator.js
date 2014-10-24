@@ -46,10 +46,22 @@ $.fn.underlineLetter = function( n )
 
 $.fn.underlineNext = function( )
 {
-
 	var spans = $( this ).children( 'span' );
 
-	spans.eq( 0 ).text( spans.eq( 0 ).text( ) + spans.eq( 1 ).text( ) );
+	if( spans.eq( 1 ).hasClass( 'red' ) )
+	{
+		spans.eq( 0 ).html( 
+			spans.eq( 0 ).html( ) + 
+			'<span class=\"red\">' + 
+			spans.eq( 1 ).text( ) + 
+			'</span>' 
+		);
+		spans.eq( 1 ).removeClass( 'red' );
+	}
+	else
+	{
+		spans.eq( 0 ).html( spans.eq( 0 ).html( ) + spans.eq( 1 ).text( ) );
+	}
 	spans.eq( 1 ).text( spans.eq( 2 ).text( )[ 0 ] );
 	spans.eq( 2 ).text( spans.eq( 2 ).text( ).slice( 1 ) );
 };
