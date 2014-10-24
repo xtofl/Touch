@@ -42,4 +42,24 @@ $.fn.underlineLetter = function( n )
 	);
 
 	$( 'span.underline' ).css( 'text-decoration', 'underline' );
-}
+};
+
+$.fn.underlineNext = function( )
+{
+	var i = $( this ).underlinedIndex( ) + 1;
+	$( this ).html( $( this ).text( ) );
+	$( this ).underlineLetter( i );
+};
+
+$.fn.underlinedIndex = function( )
+{
+	var output = $( this ).html( );
+	if( !output.search( 'span' ) )
+		return -1;
+
+	for( var i = 0; i < output.length; i++ )
+	{
+		if( output[ i ] == '<' && output.substr( i, 5 ) == '<span' ) 
+			return i;
+	}	
+};

@@ -3,10 +3,23 @@ function keyReact( event )
 	if( event.which == 13 )
 		enterReact( );
 	else
-		$( '.output' ).text( $( '.output' ).text( ) + String.fromCharCode( event.which ) );
+		compareInputAndOutput( String.fromCharCode( event.which ) );
 }
 
 function enterReact( )
 {
 	$( '.output' ).text( generateOutput( 5, 5 ) );
+}
+
+function compareInputAndOutput( inputLetter )
+{
+
+	if( inputLetter ==  $( 'span.underline' ).text( ) )
+		$( '.output' ).underlineNext( );
+	else
+	{
+		$( 'span.underline' ).addClass( 'red' );
+		$( '.red' ).css( 'color', 'red' );
+	}
+
 }
