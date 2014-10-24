@@ -9,6 +9,7 @@ function keyReact( event )
 function enterReact( )
 {
 	$( '.output' ).text( generateOutput( 5, 5 ) );
+	$( '.output' ).underlineLetter( 0 );
 }
 
 function compareInputAndOutput( inputLetter )
