@@ -1,5 +1,5 @@
 $( function( )
 {
-	$( 'textarea.input' ).bind( 'keypress', keyReact );
+	$( 'body' ).bind( 'keypress', keyReact );
 }
 );
