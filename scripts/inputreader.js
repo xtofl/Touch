@@ -25,6 +25,8 @@ function compareInputAndOutput( inputLetter )
 	{
 		if( $( '.output span:first' ).text( ) == '' && inputLetter == ' ' )
 			return;
+
+		countMiss( $( '.output span.underline' ).text( ) );
 		$( '.output span.underline' ).addClass( 'red' );
 	}
 
