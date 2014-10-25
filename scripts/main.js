@@ -6,5 +6,6 @@ $( function( )
 	$( '.output' ).underlineLetter( 0 );
 
 	createMissTable( );
+	setSessionWordNumber( 5 );
 }
 );

@@ -18,8 +18,21 @@ function compareInputAndOutput( inputLetter )
 	if( inputLetter ==  $( '.output span.underline' ).text( ) )
 	{
 		$( '.output' ).underlineNext( );
+
+		if( inputLetter == ' ' )
+			wordWasWritten( );
+
 		if( $( '.output span:last' ).text( ) == '' )
+		{
+			wordWasWritten( );
 			enterReact( );
+		}
+
+		if( endOfSession( ) )
+		{
+			$( '.output' ).hide( );
+			showResults( );
+		}
 	}
 	else
 	{

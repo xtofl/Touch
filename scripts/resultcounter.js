@@ -26,3 +26,21 @@ function showResults( )
 	}
 	$( '<div></div>' ).html( res ).appendTo( 'body' );
 }
+
+function setSessionWordNumber( n )
+{
+	window.sessionWordNumber = n;
+}
+
+function wordWasWritten( )
+{
+	window.sessionWordNumber--;
+}
+
+function endOfSession( )
+{
+	if( window.sessionWordNumber == 0 )
+		return true;
+	else
+		return false;
+}
