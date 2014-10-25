@@ -16,8 +16,16 @@ function compareInputAndOutput( inputLetter )
 {
 
 	if( inputLetter ==  $( '.output span.underline' ).text( ) )
+	{
 		$( '.output' ).underlineNext( );
+		if( $( '.output span:last' ).text( ) == '' )
+			enterReact( );
+	}
 	else
+	{
+		if( $( '.output span:first' ).text( ) == '' && inputLetter == ' ' )
+			return;
 		$( '.output span.underline' ).addClass( 'red' );
+	}
 
 }
