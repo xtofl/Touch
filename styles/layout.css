@@ -1,0 +1,22 @@
+.results
+{
+	text-align: center;
+}
+
+.results > div 
+{
+	display: inline-block;
+	margin: 5px;
+}
+
+.results .hit
+{
+	background-color: black;
+	width: 1em;
+}
+
+.results .miss
+{
+	background-color: red;
+	width: 1em;
+}

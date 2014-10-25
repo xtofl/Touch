@@ -1,30 +1,49 @@
-function createMissTable( )
+function createResultTables( )
 {
 	window.missTable = new Object( );
+	window.hitTable = new Object( );
+
+	for( var i = 0; i < 26; i++ )
+	{
+		window.missTable[ String.fromCharCode( i + 97 ) ] = 0;
+		window.hitTable[ String.fromCharCode( i + 97 ) ] = 0;
+	}
 }
 
 function countHit( letter )
 {
-	if( window.missTable[ letter ] )
-		window.missTable[ letter ]--;
+	window.hitTable[ letter ]++;
 }
 
 function countMiss( letter )
 {
-	if( window.missTable[ letter ] )
-		window.missTable[ letter ]++;
-	else
-		window.missTable[ letter ] = 1;
+	window.missTable[ letter ]++;
 }
 
-function showResults( )
+function maxHit( )
 {
-	var res = '';
+	var max = window.hitTable.a;
+
+	for( var key in window.hitTable )
+	{
+		if( max < window.hitTable[ key ] )
+			max = window.hitTable[ key ];
+	}
+
+	return max;
+}
+
+function maxMiss( )
+{
+	var max = window.missTable.a;
+
 	for( var key in window.missTable )
 	{
-		res += key + ' - ' + window.missTable[ key ] + '<br />';
+		if( max < window.missTable[ key ] )
+			max = window.missTable[ key ];
 	}
-	$( '<div></div>' ).html( res ).appendTo( 'body' );
+
+	return max;
 }
 
 function setSessionWordNumber( n )

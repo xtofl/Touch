@@ -21,6 +21,8 @@ function compareInputAndOutput( inputLetter )
 
 		if( inputLetter == ' ' )
 			wordWasWritten( );
+		else
+			countHit( inputLetter );
 
 		if( $( '.output span:last' ).text( ) == '' )
 		{
@@ -39,7 +41,10 @@ function compareInputAndOutput( inputLetter )
 		if( $( '.output span:first' ).text( ) == '' && inputLetter == ' ' )
 			return;
 
-		countMiss( $( '.output span.underline' ).text( ) );
+		var expectedLetter = $( '.output span.underline' ).text( );
+		if( expectedLetter != ' ' )
+			countMiss( expectedLetter );
+		
 		$( '.output span.underline' ).addClass( 'red' );
 	}
 
