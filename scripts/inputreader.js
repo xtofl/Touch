@@ -15,9 +15,9 @@ function enterReact( )
 function compareInputAndOutput( inputLetter )
 {
 
-	if( inputLetter ==  $( 'span.underline' ).text( ) )
+	if( inputLetter ==  $( '.output span.underline' ).text( ) )
 		$( '.output' ).underlineNext( );
 	else
-		$( 'span.underline' ).addClass( 'red' );
+		$( '.output span.underline' ).addClass( 'red' );
 
 }
