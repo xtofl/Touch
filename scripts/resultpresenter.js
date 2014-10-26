@@ -9,7 +9,7 @@ function showResults( )
 		.appendTo( '.results table tr:eq(2)' );
 	}
 
-	$( '.results' ).show( );
+	$( '.results' ).fadeIn( 1500 );
 	setChartBars( 75 );
 }
 
