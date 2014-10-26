@@ -1,6 +1,14 @@
 .results
 {
 	text-align: center;
+	display: none;
+}
+
+.results button
+{
+	display: block;
+	margin: auto;
+	margin-top: 75px;
 }
 
 .results > div 

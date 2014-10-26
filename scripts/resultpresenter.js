@@ -7,10 +7,11 @@ function showResults( )
 		$( '<div></div>' ).addClass( 'letter' ).text( key ).appendTo( letter );
 		$( '<div></div>' ).addClass( 'miss' ).appendTo( letter );
 
-		letter.appendTo( '.results' );
+		letter.insertBefore( '.results button' );
 	}
 
-	setChartBars( 50 );
+	setChartBars( 75 );
+	$( '.results' ).show( );
 }
 
 function setChartBars( maxBarHeight )

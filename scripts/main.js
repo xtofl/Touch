@@ -1,11 +1,23 @@
 $( function( )
 {
+
 	$( 'body' ).bind( 'keypress', keyReact );
+	
+	$( '.results button' ).bind( 'click', function( )
+	{
 
-	$( '.output' ).text( generateOutput( 5, 5 ) );
-	$( '.output' ).underlineLetter( 0 );
+		$( '.output' ).show( );
+		$( '.output' ).text( generateOutput( 5, 5 ) );
+		$( '.output' ).underlineLetter( 0 );
+		$( '.results' ).children( ).not( 'button' ).remove( );
+		$( '.results' ).hide( );
 
-	createResultTables( );
-	setSessionWordNumber( 5 );
+		if( !window.hitTable )
+			createResultTables( );
+		setSessionWordNumber( 6 );
+
+	}
+	).click( );
+
 }
 );
