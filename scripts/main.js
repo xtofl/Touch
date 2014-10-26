@@ -1,11 +1,11 @@
 $( function( )
 {
 
-	$( 'body' ).bind( 'keypress', keyReact );
-	
-	$( '.results button' ).bind( 'click', function( )
-	{
+	$( 'body' ).on( 'keypress', keyReact );
 
+	$( '.results button' ).on( 'click', function( )
+	{
+		
 		$( '.output' ).show( );
 		$( '.output' ).text( generateOutput( 5, 5 ) );
 		$( '.output' ).underlineLetter( 0 );

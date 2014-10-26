@@ -10,8 +10,8 @@ function showResults( )
 		letter.insertBefore( '.results button' );
 	}
 
-	setChartBars( 75 );
 	$( '.results' ).show( );
+	setChartBars( 75 );
 }
 
 function setChartBars( maxBarHeight )
@@ -25,8 +25,10 @@ function setChartBars( maxBarHeight )
 		var hitHeight = Math.floor( window.hitTable[ letter ] * maxBarHeight / max );
 		var missHeight = Math.floor( window.missTable[ letter ] * maxBarHeight / max );
 
-		$( this ).children( '.hit' ).height( hitHeight );
-		$( this ).children( '.miss' ).height( missHeight );
+		$( this ).height( maxBarHeight * 2 + $( this ).children( '.letter' ).height( ) );
+
+		$( this ).children( '.hit' ).animate( { height: hitHeight }, 1000 );
+		$( this ).children( '.miss' ).animate( { height: missHeight }, 1000 );
 	}
 	);
 }
