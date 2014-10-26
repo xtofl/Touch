@@ -2,12 +2,11 @@ function showResults( )
 {
 	for( var key in window.hitTable )
 	{
-		var letter = $( '<div></div>' ).attr( 'id', key );
-		$( '<div></div>' ).addClass( 'hit' ).appendTo( letter );
-		$( '<div></div>' ).addClass( 'letter' ).text( key ).appendTo( letter );
-		$( '<div></div>' ).addClass( 'miss' ).appendTo( letter );
-
-		letter.insertBefore( '.results button' );
+		$( '<td></td>' ).append( $( '<div></div>' ).addClass( 'hit' ) )
+		.appendTo( '.results table tr:eq(0)' );
+		$( '<td></td>' ).text( key ).appendTo( '.results table tr:eq(1)' );
+		$( '<td></td>' ).append( $( '<div></div>' ).addClass( 'miss' ) )
+		.appendTo( '.results table tr:eq(2)' );
 	}
 
 	$( '.results' ).show( );
@@ -16,19 +15,22 @@ function showResults( )
 
 function setChartBars( maxBarHeight )
 {
-	$( '.results > div' ).each( function( )
+	$( '.upper td, .lower td' ).height( maxBarHeight );
+
+	$( '.results tr:eq(0) td' ).each( function( )
 	{
-		var letter = $( this ).children( '.letter' ).text( );
+		var thisIndex = $( '.results tr:eq(0) td' ).index( this );
+		var letter = $( '.results tr:eq(1) td' ).eq( thisIndex ).text( );
 
 		var max = ( maxMiss( ) < maxHit( ) ) ? maxHit( ) : maxMiss( );
 
 		var hitHeight = Math.floor( window.hitTable[ letter ] * maxBarHeight / max );
 		var missHeight = Math.floor( window.missTable[ letter ] * maxBarHeight / max );
 
-		$( this ).height( maxBarHeight * 2 + $( this ).children( '.letter' ).height( ) );
-
-		$( this ).children( '.hit' ).animate( { height: hitHeight }, 1000 );
-		$( this ).children( '.miss' ).animate( { height: missHeight }, 1000 );
+		$( this ).children( '.hit' )
+			.animate( { height: hitHeight }, 1000 );
+		$( '.results tr:eq(2) td' ).eq( thisIndex ).children( '.miss' )
+			.animate( { height: missHeight }, 1000 );
 	}
 	);
 }

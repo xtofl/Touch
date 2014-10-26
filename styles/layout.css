@@ -4,17 +4,26 @@
 	display: none;
 }
 
+.results table
+{
+	margin: auto;
+}
+
+.upper td
+{
+	vertical-align: bottom;
+}
+
+.lower td
+{
+	vertical-align: top;
+}
+
 .results button
 {
 	display: block;
 	margin: auto;
 	margin-top: 75px;
-}
-
-.results > div 
-{
-	display: inline-block;
-	margin: 5px;
 }
 
 .results .hit
@@ -28,3 +37,4 @@
 	background-color: red;
 	width: 1em;
 }
+
