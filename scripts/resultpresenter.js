@@ -10,6 +10,7 @@ function showResults( )
 	}
 
 	$( '.results' ).fadeIn( 1500 );
+	$( 'body' ).off( 'keypress' );
 	setChartBars( 75 );
 }
 
