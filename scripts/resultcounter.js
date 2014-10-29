@@ -46,6 +46,17 @@ function maxMiss( )
 	return max;
 }
 
+function calculatePercent( letter )
+{
+
+	var hits = window.hitTable[ letter ];
+	var misses = window.missTable[ letter ];
+	var sum = hits + misses;
+
+	return ( hits / sum ) * 100;
+
+}
+
 function setSessionWordNumber( n )
 {
 	window.sessionWordNumber = n;

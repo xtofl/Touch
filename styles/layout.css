@@ -38,13 +38,11 @@
 
 .results .hit
 {
-	background-color: black;
 	width: 1em;
 }
 
 .results .miss
 {
-	background-color: red;
 	width: 1em;
 }
 

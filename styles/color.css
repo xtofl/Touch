@@ -3,7 +3,22 @@
 	color: red;
 }
 
-.results a
+.results .hit
+{
+	background-color: black;
+}
+
+.results .miss
+{
+	background-color: red;
+}
+
+.results .percent
+{
+	background-color: darkblue;
+}
+
+.options a
 {
 	color: gray;
 }
