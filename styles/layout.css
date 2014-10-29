@@ -28,7 +28,12 @@
 {
 	display: block;
 	margin: auto;
-	margin-top: 75px;
+	margin-top: 30px;
+}
+
+.results .options
+{
+	margin-bottom: 30px;
 }
 
 .results .hit
@@ -43,3 +48,7 @@
 	width: 1em;
 }
 
+a + a
+{
+	margin-left: 10em;
+}

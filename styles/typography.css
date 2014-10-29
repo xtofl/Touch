@@ -5,6 +5,13 @@
 	text-align: center;
 }
 
+.results a
+{
+	font-family: sans-serif;
+	font-size: 12px;
+	
+}
+
 .underline
 {
 	text-decoration: underline;

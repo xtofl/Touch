@@ -33,7 +33,7 @@ function compareInputAndOutput( inputLetter )
 		if( endOfSession( ) )
 		{
 			$( '.output' ).hide( );
-			showResults( );
+			showResults( 75 );
 		}
 	}
 	else

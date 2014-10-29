@@ -1,4 +1,4 @@
-function showResults( )
+function showResults( maxBarHeight )
 {
 	for( var key in window.hitTable )
 	{
@@ -9,15 +9,16 @@ function showResults( )
 		.appendTo( '.results table tr:eq(2)' );
 	}
 
-	$( '.results' ).fadeIn( 1500 );
-	$( 'body' ).off( 'keypress' );
-	setChartBars( 75 );
-}
-
-function setChartBars( maxBarHeight )
-{
 	$( '.upper td, .lower td' ).height( maxBarHeight );
 
+	$( '.results' ).fadeIn( 1500 );
+	$( 'body' ).off( 'keypress' );
+	setHMChartBars( maxBarHeight );
+}
+
+
+function setHMChartBars( maxBarHeight )
+{
 	$( '.results tr:eq(0) td' ).each( function( )
 	{
 		var thisIndex = $( '.results tr:eq(0) td' ).index( this );
@@ -35,3 +36,4 @@ function setChartBars( maxBarHeight )
 	}
 	);
 }
+
