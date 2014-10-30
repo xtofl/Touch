@@ -16,7 +16,6 @@ function showResults( maxBarHeight )
 
 	setHMChartBars( maxBarHeight );
 	setOptions( maxBarHeight );
-
 }
 
 function setOptions( maxBarHeight )
@@ -82,3 +81,4 @@ function setPercentChartBars( maxBarHeight )
 	}
 	);
 }
+

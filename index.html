@@ -7,6 +7,7 @@
 	<link rel="stylesheet" href="styles/layout.css" />
 
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script src="scripts/options.js"></script>
 	<script src="scripts/resultcounter.js"></script>
 	<script src="scripts/resultpresenter.js"></script>
 	<script src="scripts/inputreader.js"></script>
@@ -32,5 +33,27 @@
 		</table>
 		<button>New session</button>
 	</div>
+
+	<div class="options">
+		<div class="header">
+			<a href="">Options</a>
+		</div>
+		<div class="main">
+			<form>
+				<label class="field" for="wordLength">Word length:</label>
+				<input type="number" name="wordLength" />
+				<br />
+
+				<label class="field" for="wordNumber">Word number:</label>
+				<input type="number" name="wordNumber" />
+				<br />
+
+				<label class="field" for="repetition">Word repetition:</label>
+				<input type="number" name="repetition" />
+				<br />
+			</form>
+		</div>
+	</div>
+
 </body>
 </html>

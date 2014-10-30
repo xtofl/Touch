@@ -18,7 +18,22 @@
 	background-color: darkblue;
 }
 
-.options a
+.results a
 {
 	color: gray;
+}
+
+.options .header
+{
+	background-color: black;
+}
+
+.options .header a
+{
+	color: lightgray;
+}
+
+.options .main
+{
+	border-color: black;
 }

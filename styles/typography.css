@@ -12,6 +12,12 @@
 	
 }
 
+.options .header a
+{
+	font-family: sans-serif;
+	font-size: 14px;
+}
+
 .underline
 {
 	text-decoration: underline;
