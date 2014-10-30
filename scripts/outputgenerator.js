@@ -1,14 +1,14 @@
-function generateOutput( wordLength, wordNumber, repeats )
+function generateOutput( wordLength, wordNumber, wordRepeat )
 {
 	var result = '';
 	for( var i = 0; i < wordNumber; i++ )
 	{
 		var word = randomWord( wordLength ) + ' ';
 
-		if( !repeats )
-			repeats = 1;
+		if( !wordRepeat )
+			wordRepeat = 1;
 
-		for( var j = 0; j < repeats; j++ )
+		for( var j = 0; j < wordRepeat; j++ )
 			result += word;
 	}
 	return result;

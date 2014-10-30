@@ -1,6 +1,8 @@
 $( function( )
 {
-	setOptionsButton( 191, 146 );
+	setTouchOptions( 5, 5, 1 );
+	setOptionsView( 191, 146 );
+	bindOptions( );
 
 	$( '.results button' ).on( 'click', function( )
 	{
@@ -9,13 +11,16 @@ $( function( )
 		
 		$( 'body' ).on( 'keypress', keyReact );
 
-		$( '.output' ).text( generateOutput( 5, 5 ) );
+		var wordLength = window.touchOptions.wordLength;
+		var wordRepeat = window.touchOptions.wordRepeat;
+
+		$( '.output' ).text( generateOutput( wordLength, 5, wordRepeat ) );
 		$( '.output' ).underlineLetter( 0 );
 		$( '.output' ).fadeIn( 1000 );
 
 		if( !window.hitTable )
 			createResultTables( );
-		setSessionWordNumber( 5 );
+		setSessionWordNumber( window.touchOptions.wordNumber );
 
 	}
 	).click( );
