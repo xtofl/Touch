@@ -23,6 +23,11 @@
 	color: gray;
 }
 
+body > .options
+{
+	background-color: #fafafa;
+}
+
 .options .header
 {
 	background-color: black;
@@ -33,7 +38,3 @@
 	color: lightgray;
 }
 
-.options .main
-{
-	border-color: black;
-}

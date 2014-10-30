@@ -1,5 +1,6 @@
 $( function( )
 {
+	setOptionsButton( 191, 146 );
 
 	$( '.results button' ).on( 'click', function( )
 	{
